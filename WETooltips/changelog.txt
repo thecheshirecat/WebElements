@@ -1,0 +1,7 @@
+Change log
+
+-Version 1.0
+
+-Removed other plug-ins for this branch.
+
+-Restart of the GitHub branches.

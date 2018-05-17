@@ -33,11 +33,9 @@
                 $this.each(function() {
                     var position = $(this).offset().top;
                     if( theWindow >= position ) {
-                        console.log(theWindow+" // "+position)
                         $(this).addClass(animation);
                     }
                     else {
-                        console.log($this.attr("id"));
                         if(resetAnimation) {
                             $(this).removeClass(animation);
                         }

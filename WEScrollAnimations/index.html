@@ -44,17 +44,17 @@
             </div>
         </main>
         <script>
-            $(document).ready(function() {
+            $(window).on("load", function() {
                 $("#Finnick").scrollAnimation({
                     animation: "bottomToTop",
                     offset: 0,
                     resetAnimation: true
                 });
-//                $("#Police").scrollAnimation({
-//                    animation: "rightToLeft",
-//                    offset: 0,
-//                    resetAnimation: true
-//                });
+                $("#Police").scrollAnimation({
+                    animation: "rightToLeft",
+                    offset: 0,
+                    resetAnimation: true
+                });
             });
         </script>
     </body>

@@ -1,12 +1,16 @@
 (function($) {
     $.fn.extend({
         scrollAnimation: function(opts) {
+            
             //Element
             var $this = $(this);
+            
             //Options
             var animation = "bottomToTop";
             var offset = 0;
             var resetAnimation = false;
+            
+            //Check if options are setted
             if(opts) {
                 if(opts.animation) {
                     animation = opts.animation;
@@ -19,21 +23,32 @@
                 }
             }
             //Scrolling function
-            $(window).scroll(function() {
-                var windowPosition = $(this).scrollTop();
-                var windowHeight = $(this).outerHeight();
+            function checkAnimations() {
+                var windowPosition = $(window).scrollTop();
+                var windowHeight = $(window).outerHeight();
                 var finalWindow = windowPosition + windowHeight;
                 
+                var theWindow = finalWindow - offset
+                
                 $this.each(function() {
-                    if( (finalWindow - offset) >= $(this).offset().top) {
-                        $(this).addClass(opts.animation);
+                    var position = $(this).offset().top;
+                    if( theWindow >= position ) {
+                        console.log(theWindow+" // "+position)
+                        $(this).addClass(animation);
                     }
-                    if(resetAnimation) {
-                        if(finalWindow < $(this).offset().top) {
-                            $(this).removeClass(opts.animation);
+                    else {
+                        console.log($this.attr("id"));
+                        if(resetAnimation) {
+                            $(this).removeClass(animation);
                         }
                     }
-                })
+                });
+            }
+            $(document).ready(function() {
+                checkAnimations();
+            });
+            $(window).on("load scroll", function() {
+                checkAnimations();
             });
         }
     });

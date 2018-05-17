@@ -18,11 +18,11 @@
             <p>
                 By scrolling through this page, you will encounter some image that will be appearing.
             </p>
-            <img src="http://img.lum.dolimg.com/v1/images/flex_tablet_zootopia_selfie_c781d089.jpeg">
-            <div class="center" id="Finnick">
+            <img src="img/zoo2.jpg">
+            <div id="Finnick">
                 <img src="img/Finnick.png">
             </div>
-            <img src="http://gli88folli.it/wp-content/uploads/2016/07/zoot3.jpg">
+            <img src="img/zoo3.jpg">
             <p>We provide a very simple script that allows to add even your on animations.</p>
             <p>So, how does this plug-in works?</p>
 <xmp>$("element").scrollAnimation({
@@ -39,22 +39,22 @@
                 <li><b>offset:</b> the amount of pixels you want to start triggering off. Use minus symbol (-) to make the animation start before reaching the element position. Default: 0.</li>
                 <li><b>resetAnimations:</b> boolean that if the window position is above the animation, it removes the animation and will add it again when the window position is on the desired position. Default: false.</li>
             </ul>
-            <div class="center" id="Finnick2">
-                <img src="img/Finnick.png">
+            <div id="Police">
+                <img src="img/zoo6.jpg">
             </div>
         </main>
         <script>
-            $(window).scroll(function() {
+            $(document).ready(function() {
                 $("#Finnick").scrollAnimation({
                     animation: "bottomToTop",
-                    offset: 500,
+                    offset: 0,
                     resetAnimation: true
                 });
-                $("#Finnick2").scrollAnimation({
-                    animation: "rightToLeft",
-                    offset: 500,
-                    resetAnimation: true
-                });
+//                $("#Police").scrollAnimation({
+//                    animation: "rightToLeft",
+//                    offset: 0,
+//                    resetAnimation: true
+//                });
             });
         </script>
     </body>

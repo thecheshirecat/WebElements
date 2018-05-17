@@ -1,0 +1,66 @@
+* {
+	box-sizing: border-box;
+	font-family: Arial, Helvetica, sans-serif;
+	margin: 0;
+	padding: 0;
+}
+@directionRight: to right;
+@directionBottom: to bottom;
+body {
+    padding-top: 10px;
+    .container {
+        max-width: 1280px;
+        margin: auto;
+        border: 1px solid #000;
+        padding: 20px;
+    }
+    .total-scroll-container {
+        position: fixed;
+        background-color: #fff;
+        z-index: 100;
+        &.top {
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 10px;
+            background: linear-gradient(@directionRight, #30821a 0%,#8afc88 100%);
+        }
+        &.bottom {
+            bottom: 0;
+            left: 0;
+            right: 0;
+            height: 10px;
+            background: linear-gradient(@directionRight, #30821a 0%,#8afc88 100%);
+        }
+        &.left {
+            top: 0;
+            left: 0;
+            bottom: 0;
+            width: 10px;
+            background: linear-gradient(@directionBottom, #30821a 0%,#8afc88 100%);
+            .scrolled {
+                top: initial;
+                bottom: 0;
+            }
+        }
+        &.right {
+            top: 0;
+            right: 0;
+            bottom: 0;
+            width: 10px;
+            background: linear-gradient(@directionBottom, #30821a 0%,#8afc88 100%);
+            .scrolled {
+                top: initial;
+                bottom: 0;
+            }
+        }
+    }
+    .scrolled {
+        position: absolute;
+        background-color: #fff;
+        height: 100%;
+        width: 100%;
+        right: 0;
+        top: 0;
+    }
+}

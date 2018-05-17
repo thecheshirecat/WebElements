@@ -1,0 +1,9 @@
+Change log
+
+-Version 1.0
+	Added new styles for the Demo page.
+    Updated the JS code for matching the styles.
+
+-Removed other plug-ins for this branch.
+
+-Restart of the GitHub branches.

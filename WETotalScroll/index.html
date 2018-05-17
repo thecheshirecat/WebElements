@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta description="Plug-in for Web Pages that indicates the amount of scroll done throught the page.">
+        <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1">
+        <link rel="stylesheet" type="text/css" href="css/WETotalScroll.css">
+        <link rel="stylesheet" type="text/css" href="css/demo.css">
+        <link rel="shortcut icon" type="image/x-icon" href="fav.ico">
+        <script src="js/jquery-3.2.1.min.js" type="text/javascript"></script>
+        <script src="js/WETotalScroll.js"></script>
+    </head>
+    <body>
+        <main>
+            <div class="total-scroll-container"></div>
+            <h1>Scrolling indicator</h1>
+            <div class="scrollingContent">
+                <div class="demoTextImg">
+                    <div class="textPosition">
+                        <p>Sometimes occurs that a page has a lot of information, with a lot of sections, and may you want to make the user know how much he or she has scrolled and how much it rest.</p>
+                        <p>This plug-in is intended to solve this problems. This shows the percentage of the whole page the user read in real time.</p>
+                        <p>Keep scrolling through the page, and see how a green bar will start filling up on the top of the page.</p>
+                        <p>This bar is fixed to the top of the window. So it will follow you no matter how far you have scrolled.</p>
+                        <p>Keep scrolling down through a gallery of images, and at the end you will find the code implemented on this plug-in.</p>
+                    </div>
+                    <div class="imgPosition">
+                        <img src="img/zoo1.jpg" alt="Zootopia">
+                    </div>
+                </div>
+                <div class="galleryImg">
+                    <div class="img">
+                        <img src="img/zoo4.jpg">
+                    </div>
+                    <div class="img">
+                        <img src="img/zoo2.jpg">
+                    </div>
+                    <div class="img">
+                        <img src="img/zoo5.jpg">
+                    </div>
+                    <div class="img">
+                        <img src="img/zoo6.jpg">
+                    </div>
+                    <div class="img">
+                        <img src="img/zoo3.jpg">
+                    </div>
+                </div>
+                <ol>
+                    <li>First, include the jQuery plug-in we provide. Our plug-in is tested with the version given.</li>
+                    <li>After that, include our plug-in js <b>WETotalScroll</b>.</li>
+                    <li>Include also the stylesheet we provided. It contains the minimum styling for the plug-in to properly show.</li>
+                    <li>
+                        Create a div with the class <b>total-scroll-container</b>. That will create the filling up bar.
+<xmp><div class="total-scroll-container"></div></xmp>
+                    </li>
+                    <li>
+                        Initialize the plug-in with the following code:
+<xmp>$(".total-scroll-container").WETotalScroll();
+</xmp>
+                    </li>
+                    <li>
+                        The plug-in can be placed into the four corners of the window: top, bottom, left or right.
+                        <br>The option to pass the position is <b>"position"</b>. Default is <b>top</b> if not providen.
+<xmp>$(".total-scroll-container").WETotalScroll({
+    "position": "left"
+});</xmp>
+                    </li>
+                </ol>
+            </div>
+        </main>
+        <script>
+            $(document).ready(function() {
+                $(".total-scroll-container").WETotalScroll();
+            });
+        </script>
+    </body>
+</html>

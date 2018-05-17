@@ -2,10 +2,11 @@
     $.fn.extend({
         WETooltip: function(opts) {
             /* INITIALIZE VARIABLES */
-            var position    = "down";  //Position can be up, down, left or right, any other option is set to "down"
-            var offsetX    = 0;           //Offset given by the user on the X axis
-            var offsetY    = 10;           //Offset given by the user on the Y axis
+            var position    = "down";           //Position can be up, down, left or right, any other option is set to "down"
+            var offsetX     = 0;                //Offset given by the user on the X axis
+            var offsetY     = 10;               //Offset given by the user on the Y axis
             var text        = "";
+            var animation   = "";               //Name of the animation
             
             /* CHECK IF OPTIONS WHERE GIVEN */
             if(opts) {
@@ -22,6 +23,9 @@
                 }
                 if(opts.text) {
                     text = opts.text;
+                }
+                if(opts.animation) {
+                    animation = opts.animation;
                 }
             }
             /* When we set the mouse on top of the tooltip object */
@@ -47,7 +51,7 @@
                 
                 /* Check if the tooltip is already visible */
                 if(!showTooltip) {
-                    $("body").append("<div class='tooltip-bubble'><div class='tooltip-container'>"+text+"</div><div class='arrow'></div></div>");
+                    $("body").append("<div class='tooltip-bubble "+animation+"'><div class='tooltip-container'>"+text+"</div><div class='arrow'></div></div>");
                     showTooltip = true;
                 }
                 /* We put the tooltip on it's position, but if it's not entirely visible, we put it on the other side */

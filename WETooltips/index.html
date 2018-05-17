@@ -55,6 +55,17 @@
                     <li>
                         <b>text</b>: required, String. This option allows you to also include HTML structures.
                     </li>
+                    <li>
+                        <b>animation</b>: optional, String. Name of a class that contains an animation. We provide the following animations.
+                        <ul>
+                            <li>
+                                <b>scaleFade</b>: scales the tooltip and fades it in.
+                            </li>
+                            <li>
+                                You can also add your custom animations!
+                            </li>
+                        </ul>
+                    </li>
                 </ul>
             </div>
         </main>
@@ -63,7 +74,8 @@
 				$(".tooltip1").WETooltip({
 					"offsetX": 10,
 					"position": "up",
-					"text": "<div class='img-tooltip'><img src='img/Finnick.png'></div><p>He can be very <b>angry</b>!</p>"
+					"text": "<div class='img-tooltip'><img src='img/Finnick.png'></div><p>He can be very <b>angry</b>!</p>",
+                    "animation": "scaleFade"
 				});
 				$(".tooltip2").WETooltip({
 					"offsetX": 20,

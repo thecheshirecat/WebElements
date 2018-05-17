@@ -1,0 +1,21 @@
+{
+  "name": "inputjump",
+  "version": "1.0.0",
+  "description": "JQuery plug-in to jump through differents inputs automatically when the number of characters reaches the maxlength of the input",
+  "main": "index.js",
+  "dependencies": {
+    "browser-sync": "^2.23.6",
+    "gulp": "^3.9.1",
+    "gulp-autoprefixer": "^5.0.0",
+    "gulp-clean-css": "^3.9.3",
+    "gulp-less": "^4.0.0",
+    "gulp-rename": "^1.2.2",
+    "gulp-sourcemaps": "^2.6.4",
+    "gulp-uglify": "^3.0.0"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Sergi Codina",
+  "license": "ISC"
+}

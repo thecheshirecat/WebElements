@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Screen Scroll Animations</title>
+        <link rel="stylesheet" type="text/css" href="css/demo.css">
+        <link rel="stylesheet" type="text/css" href="css/WEInputJump.css">
+        <script src="js/jquery-3.2.1.min.js" type="text/javascript"></script>
+        <script src="js/WEInputJump.js" type="text/javascript"></script>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, user-scalable=no">
+        <meta description="Jump between input texts once they are filled up">
+        <link rel="icon" type="image/png" href="img/favicon.ico">
+        <style>
+            .center {
+                text-align: center;
+                opacity: 0;
+            }
+        </style>
+    </head>
+    <body>
+        <main>
+            <h1>Input Jump</h1>
+            <div class="inputJumpContainer">
+                <div class="inputJump">
+                    <label for="id">ID:</label>
+                    <input type="text" maxlength="8" id="id" placeholder="9999999">
+                </div>
+                <div class="inputJump">
+                    <label for="letter">Letter:</label>
+                    <input type="text" class="small" maxlength="1" id="letter" placeholder="X">
+                </div>
+            </div>
+            <p>Automatization is something more common nowadays, and ofter we are asked to jump between inputs once them are filled up.</p>
+            <p>You can find a working example above.</p>
+            <p>To get this working out, let's get a look on how to implement it.</p>
+            <ol>
+                <li>Import the jQuery plug-in we provide.</li>
+                <li>Import our plug-in WEInputJump.js.</li>
+                <li>
+                    Insert the HTML markup
+<xmp><div class="inputJumpContainer">
+    <div class="inputJump">
+        <label for="labelInput">Label text</label>
+        <input type="text" maxlength="8" id="labelInput">
+    </div>
+    <div class="inputJump">
+        <label for="labelInput2">Label text</label>
+        <input type="text" maxlength="1" id="labelInput2">
+    </div>
+</div></xmp>
+                </li>
+                <li>You can add as many as you want. Take in mind that will jump between inputs that are wrapped in the <b>inputJumpContainer</b> class.</li>
+            </ol>
+            <p>Our plug-in will do the rest, it's all you need to set-up.</p>
+            <p>WEInputJump will jump between inputs until you reach the last one. Once this one is filled, it will check for any previous inputs that are not filled up with the maxlength given and will focus it.</p>
+            <p>Also, if the user focuses on a input which is filled up, it will select all the value, and once filled up again, it will do the same for the following input.</p>
+            <p>
+                Some options to give to the plug-in:
+            </p>
+            <ul>
+                <li>
+                    <b>inputJumpColumn:</b> inputJumpContainer works as a flexbox. By default the direction is <b>row</b>, but you can change it easily with this class along with it to make it <b>column</b> direction.
+                </li>
+                <li>
+                    <b>.on("change"):</b> When an input is full filled, it triggers an <b>on.("change")</b> event. Below we leave an example. This is handful when for example, any test of the value must be take care of.
+<xmp>$(".inputJump").find("input").on("change", function() {
+    //You function here
+});</xmp>
+                </li>
+            </ul>
+
+        </main>
+    </body>
+</html>

@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+        <meta description="Custom form elements for your web page. Modify the appearance of your checkbox, radio buttons and dropdown elements.">
+		<title>Create your own custom form elements</title>
+        <link rel="stylesheet" type="text/css" href="css/WEFormElements.css">
+        <link rel="stylesheet" type="text/css" href="css/demo.css">
+        <script src="js/jquery-3.2.1.min.js" type="text/javascript"></script>
+		<script src="js/WEFormElements.js" type="text/javascript"></script>
+        <link rel="shortcut icon" type="image/x-icon" href="fav.ico">
+	</head>
+	<body>
+        
+        <a href="https://github.com/thecheshirecat/web-elements" target="_blank" class="brand">
+            <img src="img/github.png">
+        </a>
+        <main>
+            <h1>Give your forms a better look!</h1>
+            <div class="fieldset">
+                <form>
+                    <div class="form-group">
+                        <label>In what web technologies are you most into?</label>
+                        <ul class="WEdropdown" data-name="myName">
+                            <li data-value="Select an option" class="selected">Select an option</li>
+                            <li data-value="html">HTML</li>
+                            <li data-value="javascript">JavaScript</li>
+                            <li data-value="css">CSS</li>
+                            <li data-value="php">PHP</li>
+                            <li data-value="other">Others</li>
+                            <li data-value="html">HTML</li>
+                            <li data-value="javascript">JavaScript</li>
+                            <li data-value="css">CSS</li>
+                            <li data-value="php">PHP</li>
+                            <li data-value="other">Others</li>
+                            <li data-value="html">HTML</li>
+                            <li data-value="javascript">JavaScript</li>
+                            <li data-value="css">CSS</li>
+                            <li data-value="php">PHP</li>
+                            <li data-value="other">Others</li>
+                        </ul>
+                    </div>
+                    <div class="form-group">
+                        <label>Sorry, this checkboxes are disabled for the moment</label>
+                        <div class="we-boxes we-inline">
+                            <input type="checkbox" class="we-checkbox" name="checkDisabled" value="1" data-label="Checked" disabled checked>
+                            <input type="checkbox" class="we-checkbox" name="checkDisabled" value="0" data-label="Unchecked" disabled>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label>Check the browsers you like most</label>
+                        <div class="we-boxes we-inline">
+                            <input type="checkbox" class="we-checkbox" name="browsers[]" value="chrome" data-label="Chrome" checked>
+                            <input type="checkbox" class="we-checkbox" name="browsers[]" value="firefox" data-label="Firefox" checked>
+                            <input type="checkbox" class="we-checkbox" name="browsers[]" value="safari" data-label="Safari">
+                            <input type="checkbox" class="we-checkbox" name="browsers[]" value="ie" data-label="Internet Explorer" data-id="IE">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label>We disabled this radio buttons on purpose</label>
+                        <div class="we-boxes we-inline">
+                            <input type="radio" class="we-radio" name="radioButtonDisabled" value="0" data-label="Ok..." disabled checked>
+                            <input type="radio" class="we-radio" name="radioButtonDisabled" value="1" data-label="If that's what you want" disabled>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label>Do you like coding for Internet Explorer?</label>
+                        <div class="we-boxes we-inline">
+                            <input type="radio" class="we-radio" name="internetExplorer" value="0" data-label="Of course!">
+                            <input type="radio" class="we-radio" name="internetExplorer" value="1" data-label="Hell no!" checked>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <button type="submit">Send form</button>
+                    </div>
+                    <div class="how">
+                        Want to know how to include this custom form elements into your web?
+                        <ol>
+                            <li>Include the jQuery plug-in and then, after it, insert our plug-in WEformElements.js</li>
+                            <li>Insert our CSS WEformElements.css stylesheet. It provides basic styling to the elements. You can override them with your own styles.</li>
+                            <li>
+                                <b>Dropdowns:</b>
+                                <br>
+<xmp><ul class="WEdropdown [classes]" data-name="" [class-container=""] [data-disabled=""]>
+    <li data-value="opt1" class="selected">Option 1</li>
+    <li data-value="opt2">Option 2</li>
+</ul>
+</xmp>
+                                The options for this dropdown are the following ones:
+                                <ul>
+                                    <li>
+                                        <b>class</b>: required class <u>WEdropdown</u>. You can also include your own classes for styling the dropdown, of for fireing event.
+                                    </li>
+                                    <li>
+                                        <b>data-name</b>: required. It will give the name we provide here to an auto-generated input with this name.
+                                    </li>
+                                    <li>
+                                        <b>class-container</b>: optional. Sometimes we just need to add some classes to the container. By providing them here separated with spaces, we will achieve that.
+                                    </li>
+                                    <li>
+                                        <b>data-disabled</b>: optional. Introduce any character inside to disable the dropdown.
+                                    </li>
+                                </ul>
+                            </li>
+                            <li>
+                                <b>checkboxes:</b>
+                                <br>
+<xmp><input type="checkbox" class="we-checkbox [classes]" name="" value="" data-label="" [class-container=""] [data-id=""] [disabled] [checked]></xmp>
+                                The options for the checkboxes are the following ones:
+                                <ul>
+                                    <li>
+                                        <b>class</b>: required class <u>we-checkbox</u>. You can also include your own classes for styling the checkbox, of for fireing event.
+                                    </li>
+                                    <li>
+                                        <b>name</b>: required. The name of the input.
+                                    </li>
+                                    <li>
+                                        <b>value</b>: required. The value of the input.
+                                    </li>
+                                    <li>
+                                        <b>data-label</b>: required. The text along the checkbox button.
+                                    </li>
+                                    <li>
+                                        <b>class-container</b>: optional. Sometimes we just need to add some classes to the container. By providing them here separated with spaces, we will achieve that.
+                                    </li>
+                                    <li>
+                                        <b>data-id</b>: optional. Sometimes when clicking a checkbox we want to know it's ID and fire a function. This will give the checkbox the ID.
+                                    </li>
+                                    <li>
+                                        <b>disabled</b>: optional. In case you want to disable the checkbox.
+                                    </li>
+                                    <li>
+                                        <b>checked</b>: optional. In case you want the checkbox checked.
+                                    </li>
+                                    <li>
+                                        <b>.on("change")</b>: jQuery that you can trigger when a checkbox is clicked. Our plug-in fires a <u>.trigger("change")</u> so you can add your own jQuery/JavaScript code once the checkbox has changed it's value.
+                                    </li>
+                                </ul>
+                            </li>
+                            <li>
+                                <b>radio buttons:</b>
+                                <br>
+<xmp><input type="radio" class="we-radio [classes]" name="" value="" data-label="" [class-container=""] [data-id=""] [disabled] [checked]></xmp>
+                                The options for the radio buttons are the following ones:
+                                <ul>
+                                    <li>
+                                        <b>class</b>: required class <u>we-radio</u>. You can also include your own classes for styling the radio button, of for fireing event.
+                                    </li>
+                                    <li>
+                                        <b>name</b>: required. The name of the input.
+                                    </li>
+                                    <li>
+                                        <b>value</b>: required. The value of the input.
+                                    </li>
+                                    <li>
+                                        <b>data-label</b>: required. The text along the radio button.
+                                    </li>
+                                    <li>
+                                        <b>class-container</b>: optional. Sometimes we just need to add some classes to the container. By providing them here separated with spaces, we will achieve that.
+                                    </li>
+                                    <li>
+                                        <b>data-id</b>: optional. Sometimes when clicking a radio button we want to know it's ID and fire a function. This will give the radio button the ID.
+                                    </li>
+                                    <li>
+                                        <b>disabled</b>: optional. In case you want to disable the radio button.
+                                    </li>
+                                    <li>
+                                        <b>checked</b>: optional. In case you want the radio button checked.
+                                    </li>
+                                    <li>
+                                        <b>.on("change")</b>: jQuery that you can trigger when a radio button is clicked. Our plug-in fires a <u>.trigger("change")</u> so you can add your own jQuery/JavaScript code once the radio button has changed it's value.
+                                    </li>
+                                </ul>
+                            </li>
+                        </ol>
+                    </div>
+                </form>
+                <div class="mockUp">
+                    <img src="img/webdesign.jpg" alt="Web Design">
+                    <b>Starting</b>
+                    <ul>
+                        <li>
+                            You can use either forms you can see below to initialize the plug-in.
+<xmp>$("form").WEformElements();
+//or
+var form = $("form").WEformElements();
+</xmp>
+                        </li>
+                    </ul>
+                    <b>Options</b>
+                    <ul>
+                        <li>
+                            <b>.reinit(String type)</b>: this function let you re-initialize the plug-in for two types: <b>checkbox</b> and/or <b>radio</b>. This works for example when dynamically you have to include more radio buttons o checkboxes into the form and has to have the same styles.
+<xmp>var form = $("form").WEformElements();
+form.reinit("checkbox");
+</xmp>
+                            You can see this happening in the checkbox "NOT THE EXPLORER!" that you can see when the page loads.
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+
+        </main>
+        <script>
+            $(document).ready(function() {
+                var form = $("form").WEformElements();
+                $("[data-id=IE]").attr("data-label", "NOT THE EXPLORER!").val("nottheexplorer");
+                setTimeout(function() {
+                    form.reinit("checkbox");
+                }, 2000);
+            });
+        </script>
+    </body>
+</html>

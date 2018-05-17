@@ -1,0 +1,118 @@
+* {
+	box-sizing: border-box;
+	font-family: Arial, Helvetica, sans-serif;
+	margin: 0;
+	padding: 0;
+}
+
+.hiddenInput {
+    visibility: hidden;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 0;
+    height: 0;
+}
+.we-boxes {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    &.we-inline {
+        flex-direction: row;
+        align-items: center;
+        .we-container {
+            display: flex;
+            align-items: center;
+            flex-direction: row;
+            margin-right: 15px;
+        }
+    }
+    &.we-block {
+        .we-container {
+            display: flex;
+            align-items: center;
+            flex-direction: row;
+        }
+    }
+}
+.we-container {
+    position: relative;
+    cursor: pointer;
+    .we-checkbox,
+    .we-radio {
+        background-image: url("../img/checkboxSprite.png");
+        background-size: 18px;
+        background-position: 0 0;
+        background-repeat: no-repeat;
+        cursor: pointer;
+        height: 18px;
+        width: 18px;
+        margin-right: 5px;
+        &.checked {
+            background-position: 0 -18px;
+        }
+        &.disabled {
+            background-image: url("../img/checkboxDisabled.png");
+            background-position: 0 0;
+        }
+        &.checked.disabled {
+            background-position: 0 -18px;
+        }
+    }
+    .we-radio {
+        background-image: url("../img/radioButtonSprite.png");
+        &.disabled {
+            background-image: url("../img/radioButtonDisabled.png");
+        }
+    }
+    span {
+        cursor: pointer;
+        display: block;
+    }
+}
+
+.dropdown {
+    background-image: url("../img/arrow-down.png");
+    background-position: right 10px center;
+    background-repeat: no-repeat;
+    border: 1px solid #000;
+    position: relative;
+    width: 100%;
+    span.dropdown-selected {
+        display: block;
+        cursor: default;
+        padding: 5px;
+        padding-right: 30px;
+    }
+    .dropdown-options {
+        background-color: #fff;
+        border: 1px solid #000;
+        border-top: 0;
+        display: none;
+        left: -1px;
+        position: absolute;
+        right: -1px;
+        top: 100%;
+        z-index: 1;
+        ul {
+            margin: 0;
+            max-height: 200px;
+            overflow: auto;
+            li {
+                cursor: pointer;
+                list-style: none;
+                padding: 5px;
+                &.selected, &:hover {
+                    background-color: #cacaca;
+                }
+            }
+        }
+    }
+    &.disabled {
+        background-color: #eee;
+        color: #aaa;
+    }
+    &.open {
+        background-image: url("../img/arrow-up.png");
+    }
+}

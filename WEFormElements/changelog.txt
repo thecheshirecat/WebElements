@@ -1,0 +1,8 @@
+Change log
+
+-Version 1.0
+	Restyle of the elements (cheekbones, radio buttons and dropdown).
+
+-Removed other plug-ins for this branch.
+
+-Restart of the GitHub branches.

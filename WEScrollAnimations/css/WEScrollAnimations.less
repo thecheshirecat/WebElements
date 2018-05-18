@@ -1,0 +1,64 @@
+.bottomToTop {
+    animation-duration: .5s;
+    animation-fill-mode: forwards;
+    animation-name: bottomToTop;
+    opacity: 0;
+}
+.topToBottom {
+    animation-duration: .5s;
+    animation-fill-mode: forwards;
+    animation-name: topToBottom;
+    opacity: 0;
+}
+.leftToRight {
+    animation-duration: .5s;
+    animation-fill-mode: forwards;
+    animation-name: leftToRight;
+    opacity: 0;
+}
+.rightToLeft {
+    animation-duration: .5s;
+    animation-fill-mode: forwards;
+    animation-name: rightToLeft;
+    opacity: 0;
+}
+@keyframes bottomToTop {
+    from {
+        opacity: 0;
+        transform: translate(0, 100%);
+    }
+    to {
+        opacity: 1;
+        transform: translate(0, 0);
+    }
+}
+@keyframes topToBottom {
+    from {
+        opacity: 0;
+        transform: translate(0, -100%);
+    }
+    to {
+        opacity: 1;
+        transform: translate(0, 0);
+    }
+}
+@keyframes leftToRight {
+    from {
+        opacity: 0;
+        transform: translate(-100%, 0);
+    }
+    to {
+        opacity: 1;
+        transform: translate(0, 0);
+    }
+}
+@keyframes rightToLeft {
+    from {
+        opacity: 0;
+        transform: translate(100%, 0);
+    }
+    to {
+        opacity: 1;
+        transform: translate(0, 0);
+    }
+}

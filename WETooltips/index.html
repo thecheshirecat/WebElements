@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Tooltips display</title>
+        <link rel="stylesheet" type="text/css" href="css/demo.css">
+        <link rel="stylesheet" type="text/css" href="css/WETooltip.css">
+        <link rel="shortcut icon" type="image/x-icon" href="fav.ico">
+        <script src="js/jquery-3.2.1.min.js" type="text/javascript"></script>
+        <script src="js/WETooltip.js" type="text/javascript"></script>
+    </head>
+    <body>
+        <main>
+            <div class="c1-c4">
+                <h1>Tooltips</h1>
+                <p>Do you want to give more information to your users poping out from a tooltip? Let's look at some examples.</p>
+                <p>
+                    <span class="tooltip1">Finnick</span>: a friend of Nick Wilde from Zootopia.
+                </p>
+                <p>
+                    <span class="tooltip2">Nick Wilde</span>: a sly fox that sells popsickles.
+                </p>
+                <p>Let's see how you can implement them.</p>
+                <ol>
+                    <li>First, include the jQuery plug-in we provide.</li>
+                    <li>After it, include our plug-in WETooltip.js</li>
+                    <li>Insert our minimum styling sheet WETooltip.css</li>
+                    <li>
+                        Add a class, id, or any target identifier to the object you want to pop-up the tooltip. This is our example.
+<xmp><p>
+    <span class="tooltip1">Finnick</span>: a friend of Nick Wilde from Zootopia.
+</p></xmp>
+                    </li>
+                    <li>
+                        Initialize the plug-in with the following code.
+<xmp>$(document).ready(function() {
+    $(".tooltip1").WETooltip({
+        "offsetPx": 10,
+        "position": "up",
+        "text": "<div class='img-tooltip'><img src='img/Finnick.png'></div><p>He can be very <b>angry</b>!</p>"
+    });
+});</xmp>
+                    </li>
+                </ol>
+                <b>Options of WETooltip</b>
+                <ul>
+                    <li>
+                        <b>offsetX</b>: optional, Integer. The amount of pixels the arrow of the tooltip will leave from the outside (left / right) of the element.
+                    </li>
+                    <li>
+                        <b>offsetY</b>: optional, Integer. The amount of pixels the arrow of the tooltip will leave from the outside (top / bottom) of the element.
+                    </li>
+                    <li>
+                        <b>position</b>: optional, String. Default down. Where the tooltip should be displayed. If the tooltip doesn't fits on the specified side, it will be placed the opposite side. If this doesn't fit either, it will be placed down.
+                    </li>
+                    <li>
+                        <b>text</b>: required, String. This option allows you to also include HTML structures.
+                    </li>
+                    <li>
+                        <b>animation</b>: optional, String. Name of a class that contains an animation. We provide the following animations.
+                        <ul>
+                            <li>
+                                <b>scaleFade</b>: scales the tooltip and fades it in.
+                            </li>
+                            <li>
+                                You can also add your custom animations!
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </main>
+        <script>
+			$(document).ready(function() {
+				$(".tooltip1").WETooltip({
+					"offsetX": 10,
+					"position": "up",
+					"text": "<div class='img-tooltip'><img src='img/Finnick.png'></div><p>He can be very <b>angry</b>!</p>",
+                    "animation": "scaleFade"
+				});
+				$(".tooltip2").WETooltip({
+					"offsetX": 20,
+                    "offsetY": 10,
+					"position": "left",
+					"text": "<div class='img-tooltip'><img src='img/NickWilde.png'></div><p>He will try to trick Judy Hopps to get <i>away</i>!</p>"
+				});
+			});
+		</script>
+    </body>
+</html>

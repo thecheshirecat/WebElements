@@ -1,0 +1,7 @@
+Change log
+
+-Version 1.0
+	Included first version of WEMouseParallax
+    Accepts 2 parameters
+        · objectPercentage - percentage the object will move from center to the sides (vertical and horizontal)
+        · backgroundPercentage - percentage the background will move of it's half size

@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel="stylesheet" type="text/css" href="css/demo.css">
+        <link rel="stylesheet" type="text/css" href="css/WEMouseParallax.css">
+        <script src="js/jquery-3.2.1.min.js"></script>
+        <script src="js/WEMouseParallax.js"></script>
+    </head>
+    <body>
+        <div class="WEBackground">
+            <img src="img/kirby.jpg" class="WEMouseParallax">
+            <img src="img/down-arrow.png" class="arrowDown">
+        </div>
+        <main>
+            <div class="fieldset">
+                <div class="container">
+                    <h1>Mouse Parallax</h1>
+                    <p>Did you like what you saw above?</p>
+                    <p>If you liked this parallax effect using the mouse, it's pretty simple to use!</p>
+                    <ol>
+                        <li>
+                            First, include the jQuery plug-in we provide.
+                            <xmp><script src="path/jquery.min.js"></script></xmp>
+                        </li>
+                        <li>
+                            Import the plug-in.
+                            <xmp><script src="path/WEMouseParallax.js"></script></xmp>
+                        </li>
+                        <li>
+                            Create the markup structure
+<xmp><div class="WEBackground">
+    <img src="img/kirby.jpg" class="WEMouseParallax">
+</div></xmp>
+                        </li>
+                        <li>
+                            Import our CSS styles (for reference!)
+                            <xmp><link rel="stylesheet" type="text/css" href="path/WEMouseParallax.css"></xmp>
+                        </li>
+                        <li>
+                            Initialize the plug-in
+<xmp><script>
+    $(".WEBackground").WEMouseParallax({
+        objectPercentage: 30,
+        backgroundPercentage: 75
+    });
+</script></xmp>
+                        </li>
+                    </ol>
+                </div>
+                <div class="mockUp">
+                    <img src="https://media.giphy.com/media/o9T2OwAsC7ubS/giphy.gif">
+                    <b>Options</b>
+                    <ul>
+                        <li>
+                            <b>objectPercentage</b>: optional, Integer. The value should go around 0 and 100. The higher the value, the less it will move. This percentage is the result of calculating the position of the image minus the end of the edges.
+                        </li>
+                        <li>
+                            <b>backgroundPercentage</b>: optional, Integer. As the objectPercentage, the value should go around 0 and 100. The higher the value, the less it will move. This percentage is the result of calculating the position of the image minus the end of the edges.
+                        </li>
+                        <li>
+                            <b>WEBackground</b>: html class/id container, name it as you wish. This will be the container of the parallax effect. The name can be whichever you want. Initialize the plug-in with this container.
+                        </li>
+                        <li>
+                            <b>WEMouseParallax</b>: html class, required. Include this object into your container, so the plug-in will know which to move.
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </main>
+        <div class="WEBackground" id="one">
+            <img src="img/kirby.jpg" class="WEMouseParallax pos2">
+            <img src="img/down-arrow.png" class="arrowUp">
+        </div>
+<script>
+    $(".WEBackground").WEMouseParallax({
+        objectPercentage: 30,
+        backgroundPercentage: 90
+    });
+</script>
+    </body>
+</html>

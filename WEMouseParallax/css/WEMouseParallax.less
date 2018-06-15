@@ -35,6 +35,15 @@
         animation-iteration-count: infinite;
         animation-name: downArrow;
     }
+    .arrowUp {
+        position: absolute;
+        top: 20px;
+        left: 50%;
+        animation-duration: 2s;
+        animation-fill-mode: forwards;
+        animation-iteration-count: infinite;
+        animation-name: downUp;
+    }
 }
 @keyframes downArrow {
     0%, 20%, 50%, 100% {
@@ -44,5 +53,15 @@
     10%, 30% {
         -webkit-transform: translate(-50%, -70%);
         transform: translate(-50%, -70%);
+    }
+}
+@keyframes downUp {
+    0%, 20%, 50%, 100% {
+    -webkit-transform: translate(-50%, -0%) rotate(180deg);
+    transform: translate(-50%, -0%) rotate(180deg);
+    }
+    10%, 30% {
+        -webkit-transform: translate(-50%, 70%) rotate(180deg);
+        transform: translate(-50%, 70%) rotate(180deg);
     }
 }

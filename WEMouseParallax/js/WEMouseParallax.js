@@ -11,48 +11,50 @@
                 backgroundPercentage = opts.backgroundPercentage;
                 objectPercentage = opts.objectPercentage;
             }
+            var objectsParallaxPosition = [];
             
-            $this.mousemove(function(e) {
+            $this.each(function(index) {
                 var $obj = $(this);
-                //Object position
-                var objectX = $obj.offset().left;
-                var objectY = $obj.offset().top;
+                var objY = $obj.find(".WEMouseParallax").position().top;
+                var objX = $obj.find(".WEMouseParallax").position().left;
                 
-                //Mouse position
-                var mousePosY = e.pageY;
-                var mousePosX = e.pageX;
+                var objXCenter = $obj.find(".WEMouseParallax").outerWidth()/2 + objX;
+                var objYCenter = $obj.find(".WEMouseParallax").outerHeight()/2 + objY;
                 
-                //Object sizes
-                var width = $obj.outerWidth();
-                var height = $obj.outerHeight();
+                var objPosition = [objXCenter, objYCenter];
+                objectsParallaxPosition.push(objPosition);
                 
-                //Object center
-                var centerY = objectY + height/2;
-                var centerX = objectX + width/2;
-                
-                var x = mousePosX - centerX;
-                var y = mousePosY - centerY;
-                
-                /*
-                    Object position percentage calc
-                */
-                var moveXP = x/objectPercentage;
-                var moveYP = y/objectPercentage;
-                
-                var totalX = -50-moveXP;
-                var totalY = -50-moveYP;
-                
-                /*
-                    Background position percentage calc
-                */
-                var moveXPB = x/backgroundPercentage;
-                var moveYPB = y/backgroundPercentage;
-                
-                var totalBX = 50-moveXPB;
-                var totalBY = 50-moveYPB;
-                
-                $obj.find(".WEMouseParallax").css("transform", "translate("+totalX+"%, "+totalY+"%)");
-                $obj.css("background-position", totalBX+"% "+totalBY+"%");
+                $obj.mousemove(function(e) {
+                    
+                    //Mouse position of the mouse minus offset of the container
+                    var mousePosX = e.pageX - $obj.offset().left;
+                    var mousePosY = e.pageY - $obj.offset().top;
+                    
+                    //Mouse position relative to the center of the object
+                    var x = mousePosX - objectsParallaxPosition[index][0];
+                    var y = mousePosY - objectsParallaxPosition[index][1];
+
+                    /*
+                        Object position percentage calc
+                    */
+                    var moveXP = x/objectPercentage;
+                    var moveYP = y/objectPercentage;
+
+                    var totalX = -50-moveXP;
+                    var totalY = -50-moveYP;
+
+                    /*
+                        Background position percentage calc
+                    */
+                    var moveXPB = x/backgroundPercentage;
+                    var moveYPB = y/backgroundPercentage;
+
+                    var totalBX = 50-moveXPB;
+                    var totalBY = 50-moveYPB;
+
+                    $obj.find(".WEMouseParallax").css("transform", "translate("+totalX+"%, "+totalY+"%)");
+                    $obj.css("background-position", totalBX+"% "+totalBY+"%");
+                });
             });
         }
     });

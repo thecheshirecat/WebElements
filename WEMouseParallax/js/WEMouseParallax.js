@@ -13,14 +13,22 @@
             }
             
             $this.mousemove(function(e) {
+                var $obj = $(this);
+                //Object position
+                var objectX = $obj.offset().left;
+                var objectY = $obj.offset().top;
+                
+                //Mouse position
                 var mousePosY = e.pageY;
                 var mousePosX = e.pageX;
                 
-                var width = $this.outerWidth();
-                var height = $this.outerHeight();
+                //Object sizes
+                var width = $obj.outerWidth();
+                var height = $obj.outerHeight();
                 
-                var centerY = height/2;
-                var centerX = width/2;
+                //Object center
+                var centerY = objectY + height/2;
+                var centerX = objectX + width/2;
                 
                 var x = mousePosX - centerX;
                 var y = mousePosY - centerY;
@@ -43,8 +51,8 @@
                 var totalBX = 50-moveXPB;
                 var totalBY = 50-moveYPB;
                 
-                $this.find(".WEMouseParallax").css("transform", "translate("+totalX+"%, "+totalY+"%)");
-                $this.css("background-position", totalBX+"% "+totalBY+"%");
+                $obj.find(".WEMouseParallax").css("transform", "translate("+totalX+"%, "+totalY+"%)");
+                $obj.css("background-position", totalBX+"% "+totalBY+"%");
             });
         }
     });

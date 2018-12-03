@@ -22,9 +22,6 @@
                 if(opts.resetAnimation) {
                     resetAnimation = true;
                 }
-                if(opts.target) {
-                    target = $(opts.target);
-                }
             }
             //Scrolling function
             function checkAnimations() {
@@ -35,6 +32,11 @@
                 var theWindow = finalWindow - offset;
                 
                 $this.each(function() {
+                    var target = $(this);
+                    // We check if it has a target
+                    if(opts.target) {
+                        target = $(opts.target);
+                    }
                     var position = $(this).offset().top;
                     if( theWindow >= position ) {
                         target.addClass(animation);

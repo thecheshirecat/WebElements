@@ -1,6 +1,6 @@
 (function($) {
     $.fn.extend({
-        scrollAnimation: function(opts) {
+        WEScrollAnimation: function(opts) {
             
             //Element
             var $this = $(this);

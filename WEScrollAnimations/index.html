@@ -29,7 +29,7 @@
             <img src="img/zoo3.jpg">
             <p>We provide a very simple script that allows to add even your on animations.</p>
             <p>So, how does this plug-in works?</p>
-<xmp>$("element").scrollAnimation({
+<xmp>$("element").WEScrollAnimation({
     animation: [string],
     offset: [integer/float],
     resetAnimation: [boolean],
@@ -51,13 +51,13 @@
         </main>
         <script>
             $(window).on("load", function() {
-                $("#Finnick").scrollAnimation({
+                $("#Finnick").WEScrollAnimation({
                     animation: "hilight",
                     offset: 0,
                     resetAnimation: true,
                     target: "#target"
                 });
-                $("#Police").scrollAnimation({
+                $("#Police").WEScrollAnimation({
                     animation: "rightToLeft",
                     offset: 0,
                     resetAnimation: true

@@ -9,6 +9,7 @@
             var animation = "bottomToTop";
             var offset = 0;
             var resetAnimation = false;
+            var target = $this;
             
             //Check if options are setted
             if(opts) {
@@ -21,6 +22,9 @@
                 if(opts.resetAnimation) {
                     resetAnimation = true;
                 }
+                if(opts.target) {
+                    target = $(opts.target);
+                }
             }
             //Scrolling function
             function checkAnimations() {
@@ -28,16 +32,16 @@
                 var windowHeight = $(window).outerHeight();
                 var finalWindow = windowPosition + windowHeight;
                 
-                var theWindow = finalWindow - offset
+                var theWindow = finalWindow - offset;
                 
                 $this.each(function() {
                     var position = $(this).offset().top;
                     if( theWindow >= position ) {
-                        $(this).addClass(animation);
+                        target.addClass(animation);
                     }
                     else {
                         if(resetAnimation) {
-                            $(this).removeClass(animation);
+                            target.removeClass(animation);
                         }
                     }
                 });

@@ -1,7 +1,11 @@
 Change log
 
+-Version 1.1
+
+    -Added new option: target
+
 -Version 1.0
 
--Removed other plug-ins for this branch.
+    -Removed other plug-ins for this branch.
 
--Restart of the GitHub branches.
+    -Restart of the GitHub branches.
